@@ -8,7 +8,7 @@ fi
 
 # Set path permision
 sudo chown -R builder $WORKPATH
-cp $GITHUB_WORKSPACE/scripts /.
+cp -r $GITHUB_WORKSPACE/scripts /.
 cd $WORKPATH
 
 echo '::group::Initializing ~/.ssh directory'
