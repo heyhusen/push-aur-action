@@ -1,12 +1,49 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
+name: 'Push changes to AUR action'
+description: 'GitHub Action to push changes to AUR'
+author: 'datakrama'
+branding:
+  icon: 'upload'
+  color: 'blue'
+
 inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+  path:
+    description: 'Location for this action to run.'
+    default: ''
+    required: false
+  pkgname:
+    description: 'AUR package / repository name'
+    required: true
+  git-username:
+    description: 'The user name for git config'
+    required: true
+  git-email:
+    description: 'The user email for git config'
+    required: true
+  private-ssh-key:
+    description: 'Your private ssh key with access to AUR repository.'
+    required: true
+  ssh-keyscan-types:
+    description: 'Comma-separated list of types to use when adding aur.archlinux.org to known hosts'
+    default: 'rsa,dsa,ecdsa,ed25519'
+    required: false
+  push:
+    description: 'Leave this false will disable push command, useful if you only want to test the SSH connection.'
+    default: 'true'
+    required: false
+  force:
+    description: 'Use --force when push to AUR.'
+    default: 'true'
+    required: false
+
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'ghcr.io/datakrama/push-aur-action:edge'
   args:
-    - ${{ inputs.myInput }}
+    - ${{ inputs.path }}
+    - ${{ inputs.pkgname }}
+    - ${{ inputs.git-username }}
+    - ${{ inputs.git-email }}
+    - ${{ inputs.private-ssh-key }}
+    - ${{ inputs.ssh-keyscan-types }}
+    - ${{ inputs.push }}
+    - ${{ inputs.force }}
