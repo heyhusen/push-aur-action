@@ -37,7 +37,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'ghcr.io/datakrama/push-aur-action:edge'
+  image: 'ghcr.io/datakrama/push-aur-action:1'
   args:
     - ${{ inputs.path }}
     - ${{ inputs.pkgname }}
