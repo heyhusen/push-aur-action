@@ -1,15 +1,12 @@
 #!/bin/bash
 
 # Set path
-WORKPATH=$GITHUB_WORKSPACE
-if [[ -n "$INPUT_PATH" ]]; then
-    WORKPATH=$INPUT_PATH
-fi
-
+echo '::group::Configuring path'
+WORKPATH=$GITHUB_WORKSPACE/$INPUT_PATH
 # Set path permision
 sudo chown -R builder $WORKPATH
-cp -r $GITHUB_WORKSPACE/scripts /.
 cd $WORKPATH
+echo '::endgroup::'
 
 echo '::group::Initializing ~/.ssh directory'
 mkdir -pv /home/builder/.ssh
@@ -19,4 +16,4 @@ chown -vR builder:builder /home/builder
 chmod -vR 600 /home/builder/.ssh/*
 echo '::endgroup::'
 
-exec runuser builder --command 'bash -l -c scripts/git.sh'
+exec runuser builder --command 'bash -l -c $GITHUB_WORKSPACE/scripts/git.sh'

@@ -48,7 +48,6 @@ false)
     echo "::error::Not pushing anything."
     ;;
 *)
-
 echo "::error::Invalid Value: inputs.push is neither 'true' nor 'false': \
 '$INPUT_PUSH'"
     exit 2
