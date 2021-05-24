@@ -4,7 +4,7 @@ export HOME=/home/builder
 
 echo '::group::Adding aur.archlinux.org to known hosts'
 ssh-keyscan -v -t \
-"$INPUT_SSH_KEYCAN_TYPES" aur.archlinux.org >>~/.ssh/known_hosts
+"$INPUT_SSH_KESYCAN_TYPES" aur.archlinux.org >> ~/.ssh/known_hosts
 echo '::endgroup::'
 
 echo '::group::Importing private key'
