@@ -13,16 +13,16 @@ inputs:
   pkgname:
     description: 'AUR package / repository name'
     required: true
-  git-username:
+  git_username:
     description: 'The user name for git config'
     required: true
-  git-email:
+  git_email:
     description: 'The user email for git config'
     required: true
-  private-ssh-key:
+  private_ssh_key:
     description: 'Your private ssh key with access to AUR repository.'
     required: true
-  ssh-keyscan-types:
+  ssh_keyscan_types:
     description: 'Comma-separated list of types to use when adding aur.archlinux.org to known hosts'
     default: 'rsa,dsa,ecdsa,ed25519'
     required: false
