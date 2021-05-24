@@ -8,9 +8,9 @@ ssh-keyscan -v -t \
 echo '::endgroup::'
 
 echo '::group::Importing private key'
-echo "$INPUT_PRIVATE_SSH_KEY" >~/.ssh/aur
+echo "$INPUT_PRIVATE_SSH_KEY" > ~/.ssh/aur
 chmod -vR 600 ~/.ssh/aur*
-ssh-keygen -vy -f ~/.ssh/aur >~/.ssh/aur.pub
+ssh-keygen -vy -f ~/.ssh/aur > ~/.ssh/aur.pub
 echo '::endgroup::'
 
 echo '::group::Creating checksums of SSH keys'
@@ -27,7 +27,7 @@ echo $(ssh aur@aur.archlinux.org help)
 echo '::endgroup::'
 
 echo '::group::Pushing'
-git remote add aur "ssh://aur@aur.archlinux.org/${$INPUT_PKGNAME}.git"
+git remote add aur "ssh://aur@aur.archlinux.org/${INPUT_PKGNAME}.git"
 case "$INPUT_PUSH" in
 true)
     case "$INPUT_FORCE" in
