@@ -38,12 +38,3 @@ inputs:
 runs:
   using: 'docker'
   image: 'ghcr.io/datakrama/push-aur-action:1'
-  args:
-    - ${{ inputs.path }}
-    - ${{ inputs.pkgname }}
-    - ${{ inputs.git-username }}
-    - ${{ inputs.git-email }}
-    - ${{ inputs.private-ssh-key }}
-    - ${{ inputs.ssh-keyscan-types }}
-    - ${{ inputs.push }}
-    - ${{ inputs.force }}
