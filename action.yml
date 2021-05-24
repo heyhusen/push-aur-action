@@ -23,7 +23,7 @@ inputs:
     description: 'Your private ssh key with access to AUR repository.'
     required: true
   ssh_keyscan_types:
-    description: 'Comma-separated list of types to use when adding aur.archlinux.org to known hosts'
+    description: 'Comma-separated list of keyscan types to use when adding aur.archlinux.org to known hosts'
     default: 'rsa,dsa,ecdsa,ed25519'
     required: false
   push:
