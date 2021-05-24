@@ -24,7 +24,7 @@ echo '::endgroup::'
 
 echo '::group::Testing the SSH connection to AUR'
 echo $(ssh aur@aur.archlinux.org help)
-cho '::endgroup::'
+echo '::endgroup::'
 
 echo '::group::Pushing'
 git remote add aur "ssh://aur@aur.archlinux.org/${$INPUT_PKGNAME}.git"
