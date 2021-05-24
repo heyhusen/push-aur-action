@@ -6,6 +6,8 @@ This action allows pushing changes made by git to [AUR](https://aur.archlinux.or
 
 If you need make changes to your AUR package (and test it), you can use [archlinux-package-action](https://github.com/datakrama/archlinux-package-action).
 
+This action is very inspired by [KSXGitHub/github-actions-deploy-aur](https://github.com/KSXGitHub/github-actions-deploy-aur).
+
 > Put your private SSH key to internet is not recommended. When using this, you are fully responsible for the actions you take and all the possibilities that will occur.
 
 ## Usage
