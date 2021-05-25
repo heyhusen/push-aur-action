@@ -89,7 +89,7 @@ jobs:
       - name: Update action.yml to use edge tagged container image
         if: github.ref == 'refs/heads/main'
         run: |
-          sed -i 's/.*image\:.*/  image\: \"ghcr.io\/${{ github.repository_owner }}\/${{ github.event.repository.name }}\:edge\"/' action.yml
+          sed -i 's/.*image\:.*/  image\: \"docker\:\/\/ghcr.io\/${{ github.repository_owner }}\/${{ github.event.repository.name }}\:edge\"/' action.yml
           cat action.yml
 
       - name: Running test
