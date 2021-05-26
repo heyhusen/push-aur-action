@@ -32,10 +32,10 @@ case "$INPUT_PUSH" in
 true)
     case "$INPUT_FORCE" in
     true)
-        git push -v --force aur master
+        git push -v --force aur HEAD:master
         ;;
     false)
-        git push -v aur master
+        git push -v aur HEAD:master
         ;;
     *)
         echo "::error::Invalid Value: inputs.force is neither 'true' nor \
