@@ -13,7 +13,8 @@ RUN useradd --create-home --shell /bin/bash builder && \
 
 # Copy files
 COPY LICENSE README.md /
-COPY /.ssh /scripts /
+COPY /.ssh /.ssh
+COPY /scripts /scripts
 COPY entrypoint.sh /entrypoint.sh
 
 # Set entrypoint
