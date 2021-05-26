@@ -18,7 +18,7 @@ Following inputs can be used as `step.with` keys.
 
 | Name                  | Type      | Default                       | Required  | Description                           |
 |-----------------------|-----------|-------------------------------|-----------|---------------------------------------|
-| `path`                | String    | $GITHUB_WORKSPACE             | `false`   | Location for this action to run. This path always located under $GITHUB_WORKSPACE |
+| `path`                | String    |                               | `false`   | Location for this action to run. This path always located under $GITHUB_WORKSPACE |
 | `pkgname`             | String    |                               | `true`    | AUR package / repository name         |
 | `git_username`        | String    |                               | `true`    | The user name for git config          |
 | `git_email`           | String    |                               | `true`    | The user email for git config         |
